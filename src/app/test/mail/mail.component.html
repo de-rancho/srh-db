@@ -1,0 +1,16 @@
+<h1>Calendar</h1>
+<a class="btn btn-light btn-sm mb-3" routerLink="/newevent">New event</a>
+<table class="table">
+    <thead>
+    <th scope="col">Subject</th>
+    <th scope="col">Recieved</th>
+    <th scope="col">From</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let event of events">
+        <td>{{event.subject.slice(0, 25)}}</td>
+        <td>{{formatDateTimeTimeZone(event.receivedDateTime) | customDate }}</td>
+        <td>{{event.sender.emailAddress.address }}</td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+<h4>mat-select</h4>
+<div class="d-flex flex-grow-1">
+<mat-form-field appearance="fill">
+    <mat-label>Choose an option</mat-label>
+    <mat-select (selectionChange)="changeSelection($event.value)">
+        <mat-option *ngFor="let d of degrees" [value]="d"><b>{{d.type}}</b> {{d.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
+</div>
