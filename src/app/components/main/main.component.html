@@ -1,63 +1,9 @@
-<div class="p-4">
-    <h1>Antrag auf Anerkennung BACHELOR - Studierendendaten</h1>
+<div class="d-flex flex-column p-4">
+    <h3>Antrag auf Anerkennung {{currentDegree?.type}} {{currentDegree?.name}}</h3>
 
-    <mat-card class="col-6">
-        <mat-card-title></mat-card-title>
-        <mat-card-content>
-            <div class="d-flex">
-                <div class="col-sm-5"><b>Name:</b></div>
-                <div class="col-sm-6">Dennis, Weller</div>
-            </div>
-
-            <div class="d-flex">
-                <div class="col-sm-5"><b>Matrikelnummer:</b></div>
-                <div class="col-sm-6">929040</div>
-            </div>
-
-            <div class="d-flex">
-                <div class="col-sm-5"><b>Geburtsdatum:</b></div>
-                <div class="col-sm-6">18.10.1995</div>
-            </div>
-
-            <div class="d-flex">
-                <div class="col-sm-5"><b>Studiengang:</b></div>
-                <div class="col-sm-6"><b>{{currentDegree?.type}}</b> {{currentDegree?.name}}</div>
-            </div>
-
-            <div class="d-flex">
-                <div class="col-sm-5"><b>Anzahl ECTS-CP:</b></div>
-                <div class="col-sm-6">{{currentDegree?.ectsNeeded}}</div>
-            </div>
-
-            <div class="d-flex">
-                <div class="col-sm-5"><b>Anzahl Module:</b></div>
-                <div class="col-sm-6">{{currentDegree?.moduleList.moduleListModules.length}}</div>
-            </div>
-
-            <div class="d-flex">
-                <div class="col-sm-5"><b>Vorgang geprüft am:</b></div>
-                <div class="col-sm-6">10.01.2023</div>
-            </div>
-
-            <div class="d-flex mb-4">
-                <div class="col-sm-5"><b>Vorgang geprüft von:</b></div>
-                <div class="col-sm-6">Max, Mustermann</div>
-            </div>
-
-            <div class="d-flex flex-column">
-                <div class="col-sm-12"><b>Kompetenzen erworben von/aus:</b></div>
-                <div class="d-flex col-9 flex-grow-1">
-                    <mat-form-field class="d-flex flex-grow-1" disabled="true" appearance="legacy">
-                        <input matInput value="Studium Medieninformatik Universität Ulm" disabled>
-                    </mat-form-field>
-                </div>
-            </div>
-
-        </mat-card-content>
-    </mat-card>
-
-    <div>
-        <app-degree-selection (e)="changeSelection($event)"></app-degree-selection>
+    <div class="d-flex col-12">
+        <srh-student-data class="col-8 pe-2" (degreeEmitter)="changeCurrentDegree($event)"></srh-student-data>
+        <srh-student-compenteces class="d-flex col-4 ps-2"></srh-student-compenteces>
     </div>
 
     <div *ngIf="currentDegree">
@@ -66,17 +12,17 @@
         <h1>{{currentDegree.name}}</h1>
         <div>
             <h3>Modules</h3>
-            <div *ngFor="let m of currentDegree.moduleList.moduleListModules" class="d-flex">
-                <div class="me-3">{{m.module.moduleId}}</div>
-                <div class="me-3">{{m.module.name}}</div>
-                <div>{{m.module.shortName}}</div>
+            <div *ngFor="let m of currentDegree.moduleList.moduleListModules" class="d-flex col-12">
+                <div class="me-3 col-1">{{m.module.moduleId}}</div>
+                <div class="me-3 col-4">{{m.module.name}}</div>
+                <div class="col-1">{{m.module.ects}}</div>
+                <div class="col-1">{{m.module.type.name}}</div>
             </div>
         </div>
     </div>
 
 
     <div>
-
-        <button mat-flat-button color="primary" (click)="method()"> hi</button>
+        <!--        <button mat-flat-button color="primary" (click)="method()"> hi</button>-->
     </div>
 </div>

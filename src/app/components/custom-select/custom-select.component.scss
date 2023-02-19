@@ -1,0 +1,27 @@
+:host::ng-deep {
+  display: flex;
+}
+
+div {
+  display: flex;
+}
+
+input {
+  display: flex;
+  flex-grow: 1;
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+}
+
+
+mat-icon {
+  transition: transform .15s ease-out;
+  transform: rotate(0);
+
+  &.rotate {
+    transform: rotate(180deg);
+  }
+}
+

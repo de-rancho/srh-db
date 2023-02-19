@@ -1,9 +1,17 @@
 mat-form-field {
+  display: flex !important;
   .mat-form-field-wrapper {
     display: flex;
     flex-grow: 1;
   }
+}
 
+mat-option .mat-option-text {
+  display: flex;
+}
+
+.highlight {
+  color: #df4807;
 }
 
 /* Importing Bootstrap SCSS file. */

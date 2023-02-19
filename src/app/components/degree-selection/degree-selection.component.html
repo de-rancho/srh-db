@@ -1,9 +1,16 @@
-<h4>mat-select</h4>
-<div class="d-flex flex-grow-1">
-<mat-form-field appearance="fill">
-    <mat-label>Choose an option</mat-label>
-    <mat-select (selectionChange)="changeSelection($event.value)">
-        <mat-option *ngFor="let d of degrees" [value]="d"><b>{{d.type}}</b> {{d.name}}</mat-option>
-    </mat-select>
-</mat-form-field>
+<h4>Wähle einen Studiengang</h4>
+<div class="d-flex flex-grow-1 col-6">
+    <mat-form-field appearance="standard">
+        <mat-label>SRH Studiengang</mat-label>
+        <input type="text"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="getOptionText" (optionSelected)="changeSelection($event)">
+            <mat-option *ngFor="let option of filteredOptions | async"
+                        [value]="option">
+                <span [innerHTML]=" (option.identifier + ' - ' + option.name + ' - ' + option.type) | highlightText: toHighlight"></span>
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
 </div>

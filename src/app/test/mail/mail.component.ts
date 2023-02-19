@@ -6,7 +6,7 @@ import { AlertsService } from '../alerts.service';
 import * as moment from 'moment-timezone';
 
 @Component({
-  selector: 'app-mail',
+  selector: 'srh-mail',
   templateUrl: './mail.component.html',
   styleUrls: ['./mail.component.scss']
 })

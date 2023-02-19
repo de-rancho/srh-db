@@ -6,6 +6,7 @@ export interface Degree {
     name: string;
     ectsNeeded: number;
     type: string;
+    identifier: string;
     institution: Institution;
     moduleList: ModuleList;
 }

@@ -2,33 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { ConnectionService } from '../../services/connection.service';
 import { Degree } from '../../model/degree';
 import { Module } from '../../model/module';
-import { $ } from 'protractor';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
-    selector: 'app-main',
+    selector: 'srh-main',
     templateUrl: './main.component.html',
-    styleUrls: ['./main.component.scss']
+    styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
 
-    constructor(protected s: ConnectionService) {
+
+    constructor(protected s: ConnectionService, private dateAdapter: DateAdapter<Date>) {
+        this.dateAdapter.setLocale('de-DE');
     }
 
-    modules: Module[];
-    currentDegree: Degree;
+    protected modules: Module[];
+    protected currentDegree: Degree;
+
 
     ngOnInit(): void {
         this.s.getAllModules().subscribe((value) => this.modules = value);
+
     }
 
-    changeSelection($event: any): void {
-        console.log($event)
-        this.currentDegree = $event;
-    }
 
-    method(): void {
-        console.log('Test');
-
-        // this.s.getAllModules();
+    changeCurrentDegree(emittedDegree: Degree): void {
+        this.currentDegree = emittedDegree;
     }
 }

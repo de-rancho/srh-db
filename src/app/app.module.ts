@@ -24,6 +24,16 @@ import { CalendarComponent } from './test/calendar/calendar.component';
 import { MailComponent } from './test/mail/mail.component';
 import { DateCustomPipe } from './test/dateCustom.pipe';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AddNewComponent } from './components/add-new/add-new.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { HighlightTextPipe } from './pipes/highlight-text.pipe';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { CustomSelectComponent } from './components/custom-select/custom-select.component';
+import { MatIconModule } from '@angular/material/icon';
+import { StudentDataComponent } from './components/student-data/student-data.component';
+import { StudentCompentecesComponent } from './components/student-compenteces/student-compenteces.component';
 
 @NgModule({
     declarations: [
@@ -35,7 +45,13 @@ import { MatButtonModule } from '@angular/material/button';
         AlertsComponent,
         CalendarComponent,
         MailComponent,
-        DateCustomPipe
+        DateCustomPipe,
+        AddNewComponent,
+        HighlightTextPipe,
+        CustomSelectComponent,
+        CustomSelectComponent,
+        StudentDataComponent,
+        StudentCompentecesComponent
     ],
     imports: [
         BrowserModule,
@@ -48,7 +64,12 @@ import { MatButtonModule } from '@angular/material/button';
         ReactiveFormsModule,
         NgbModule,
         MsalModule,
-        MatButtonModule
+        MatButtonModule,
+        MatToolbarModule,
+        MatAutocompleteModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatIconModule
     ],
     providers: [ConnectionService,
         {

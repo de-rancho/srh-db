@@ -1,0 +1,16 @@
+<input
+    #input
+    [matAutocomplete]="auto"
+    [formControl]="myControl">
+<mat-icon #icon matSuffix (click)="input.focus()">expand_more</mat-icon>
+<mat-autocomplete
+    #auto="matAutocomplete"
+    [displayWith]="getOptionText"
+    (optionSelected)="changeSelection($event)"
+    panelWidth="'auto'">
+
+    <mat-option *ngFor="let option of filteredOptions | async"
+                [value]="option">
+        <span [innerHTML]=" (option.identifier + ' - ' + option.name + ' - ' + option.type) | highlightText: toHighlight"></span>
+    </mat-option>
+</mat-autocomplete>

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
-import { HomeComponent } from './test/home/home.component';
-import { CalendarComponent } from './test/calendar/calendar.component';
-import { MailComponent } from './test/mail/mail.component';
+import { AddNewComponent } from './components/add-new/add-new.component';
 
 const routes: Routes = [
     {path: '', component: MainComponent},
+    {path: 'new', component: AddNewComponent},
     // { path: 'calendar', component: CalendarComponent },
     // { path: 'mail', component: MailComponent },
 

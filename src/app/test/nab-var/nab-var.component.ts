@@ -3,7 +3,7 @@ import { User } from '../user';
 import { AuthService } from '../auth.service';
 
 @Component({
-    selector: 'app-nab-var',
+    selector: 'srh-nab-var',
     templateUrl: './nab-var.component.html',
     styleUrls: ['./nab-var.component.scss']
 })

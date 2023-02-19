@@ -3,7 +3,7 @@ import { AlertsService } from '../alerts.service';
 import { Alert } from '../alert';
 
 @Component({
-  selector: 'app-alerts',
+  selector: 'srh-alerts',
   templateUrl: './alerts.component.html',
   styleUrls: ['./alerts.component.scss']
 })
@@ -11,10 +11,10 @@ export class AlertsComponent implements OnInit {
 
   constructor(public alertsService: AlertsService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  close(alert: Alert) {
+  close(alert: Alert): void {
     this.alertsService.remove(alert);
   }
 }

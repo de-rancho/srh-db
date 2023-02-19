@@ -12,7 +12,7 @@ import * as moment from 'moment-timezone';
 
 
 @Component({
-    selector: 'app-calendar',
+    selector: 'srh-calendar',
     templateUrl: './calendar.component.html',
     styleUrls: ['./calendar.component.scss']
 })

@@ -3,14 +3,14 @@ import { User } from '../user';
 import { AuthService } from '../auth.service';
 
 @Component({
-    selector: 'app-home',
+    selector: 'srh-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
     // Is a user logged in?
-    authenticated: boolean = false;
+    authenticated = false;
     // The user
     user?: User = undefined;
 
